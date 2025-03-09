@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ducky Developments</title>
+  
+  <!-- Google Fonts: Nunito (rounded edges, smooth) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- EmailJS SDK (for sending emails from the client) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      // Initialize EmailJS with your user ID (from your EmailJS dashboard)
+      emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
+    })();
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#games">Games</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <!-- Larger, floating, glowing logo -->
+      <div class="logo-wrapper">
+        <!-- Replace ducky_logo.png with your actual logo file -->
+        <img src="ducky_logo.png" alt="Ducky Developments Logo" class="floating-logo" />
+      </div>
+
+      <h1 class="studio-title">Ducky Developments</h1>
+      <p class="tagline">
+        Creating roblox experiences that feel refreshing.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#games" class="btn primary-btn">Explore our Games</a>
+        <a href="#contact" class="btn secondary-btn">Get in Touch</a>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="stats-row">
+        <div class="stat-box glow-box">
+          <h2 id="totalPlayers">0</h2>
+          <p>Active Players</p>
+        </div>
+        <div class="stat-box glow-box">
+          <h2 id="totalVisits">0</h2>
+          <p>Total Play Sessions</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GAMES SECTION -->
+  <section class="games-section" id="games">
+    <h2>Our Top Games</h2>
+    <div class="games-container" id="gamesContainer">
+      <!-- Game cards injected by script.js -->
+    </div>
+    <button class="btn view-all-btn">View all Games</button>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Have a question or want to work together? Send us a message!</p>
+
+    <form id="contactForm" onsubmit="sendEmail(event)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="user_name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="user_email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="user_message" rows="5" required></textarea>
+      </div>
+
+      <!-- Hidden field to set the email’s recipient. 
+           EmailJS templates can also define a default "to_email," 
+           but here’s an example if you want to pass it dynamically. -->
+      <input type="hidden" name="to_email" value="cucumumupupu@example.com" />
+
+      <button type="submit" class="btn primary-btn submit-btn">Send Message</button>
+    </form>
+
+    <!-- Container to display success/error messages -->
+    <div id="formStatus"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Ducky Developments. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
