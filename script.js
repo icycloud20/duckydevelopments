@@ -127,7 +127,7 @@ const GAME_IDS = [
     e.preventDefault();
   
     // 'contactForm' is the form ID in index.html
-    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contactForm")
+    emailjs.sendForm("service_lvhehdj", "template_xaqn5zy", "#contactForm")
       .then(response => {
         console.log("SUCCESS!", response.status, response.text);
         document.getElementById("formStatus").textContent = "Message sent successfully!";
